@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "DrowsyFriend KidControl",
+  "version": "0.1.0",
+  "description": "Connects Chrome to the local DrowsyFriend KidControl service.",
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "permissions": [
+    "webNavigation"
+  ],
+  "host_permissions": [
+    "http://127.0.0.1:17653/*",
+    "http://127.0.0.1:17654/*"
+  ]
+}

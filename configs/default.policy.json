@@ -1,0 +1,56 @@
+{
+  "schema_version": 2,
+  "version": "1.0",
+  "device_id": "child-windows-001",
+  "modules": {
+    "kidcontrol": {
+      "enabled": true,
+      "mode": "enforce",
+      "settings": {
+        "dry_run": true,
+        "app_control": {
+          "enabled": true,
+          "scan_interval_seconds": 2,
+          "blocked_apps": [
+            "msedge.exe",
+            "brave.exe",
+            "opera.exe",
+            "tor.exe"
+          ]
+        },
+        "window_monitoring": {
+          "enabled": true,
+          "scan_interval_seconds": 2,
+          "blocked_title_keywords": [
+            "private browsing",
+            "inprivate",
+            "restricted"
+          ]
+        },
+        "screen_monitoring": {
+          "enabled": false,
+          "sample_interval_seconds": 3
+        },
+        "browser_monitoring": {
+          "enabled": false,
+          "default_profile": "default",
+          "profiles": {
+            "default": {
+              "policy": "block_list",
+              "blocked_urls": [],
+              "block_inappropriate": true
+            },
+            "study": {
+              "policy": "allow_list",
+              "allowed_urls": [
+                "wikipedia.org",
+                "khanacademy.org"
+              ],
+              "block_inappropriate": true
+            }
+          }
+        }
+      }
+    }
+  }
+}

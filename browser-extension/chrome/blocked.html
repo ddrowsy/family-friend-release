@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page blocked by KidControl</title>
+  <link rel="stylesheet" href="blocked.css">
+</head>
+<body>
+  <main>
+    <h1>Page blocked</h1>
+    <p>This page is not available with the current browser profile.</p>
+    <dl>
+      <dt>Site</dt>
+      <dd id="blocked-url"></dd>
+      <dt>Profile</dt>
+      <dd id="blocked-profile"></dd>
+      <dt id="blocked-reason-label">Reason</dt>
+      <dd id="blocked-reason"></dd>
+    </dl>
+
+    <div class="actions">
+      <button id="ask-parent-button" type="button">Ask parent</button>
+      <button id="parent-toggle-button" type="button">Parent is here</button>
+    </div>
+
+    <p id="access-status" class="status" aria-live="polite"></p>
+    <button id="resume-status-button" type="button" hidden>Check again</button>
+
+    <section id="parent-panel" hidden>
+      <h2>Parent approval</h2>
+      <form id="parent-form">
+        <label>
+          Parent code
+          <input id="parent-code" type="password" autocomplete="off" required>
+        </label>
+        <label>
+          Access
+          <select id="approval-action">
+            <option value="temporary">Temporary</option>
+            <option value="permanent">Permanent for this browser profile</option>
+          </select>
+        </label>
+        <label id="duration-field">
+          Duration
+          <select id="approval-duration">
+            <option value="900">15 minutes</option>
+            <option value="1800">30 minutes</option>
+            <option value="3600">1 hour</option>
+          </select>
+        </label>
+        <button id="parent-submit-button" type="submit">Allow access</button>
+      </form>
+      <p id="parent-status" class="status" aria-live="polite"></p>
+    </section>
+  </main>
+  <script type="module" src="blocked.js"></script>
+</body>
+</html>

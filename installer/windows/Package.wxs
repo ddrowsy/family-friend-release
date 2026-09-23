@@ -1,0 +1,19 @@
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+  <Package
+    Name="Family Friend"
+    Manufacturer="Family Friend"
+    Version="0.1.0"
+    ProductCode="{F460AEC8-3A21-4EAB-8219-90AD2324177A}"
+    UpgradeCode="{63CA47EC-24BE-43D5-A70E-BAA5996C32D6}"
+    Scope="perMachine">
+    <MediaTemplate EmbedCab="yes" />
+
+    <StandardDirectory Id="ProgramFiles64Folder">
+      <Directory Id="INSTALLFOLDER" Name="Family Friend">
+        <File Id="AgentExecutable" Source="$(var.StageDir)\drowsyfriend.exe" />
+        <File Id="DesktopUIExecutable" Source="$(var.StageDir)\drowsyfriend-ui.exe" />
+        <File Id="SessionWorkerExecutable" Source="$(var.StageDir)\drowsyfriend-session-worker.exe" />
+      </Directory>
+    </StandardDirectory>
+  </Package>
+</Wix>
