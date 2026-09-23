@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "drowsyfriend policy",
+  "type": "object",
+  "required": ["schema_version", "version", "device_id", "modules"],
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "version": {
+      "type": "string"
+    },
+    "device_id": {
+      "type": "string"
+    },
+    "modules": {
+      "type": "object",
+      "properties": {
+        "kidcontrol": {
+          "type": "object",
+          "required": ["enabled", "mode", "settings"],
+          "properties": {
+            "enabled": {
+              "type": "boolean"
+            },
+            "mode": {
+              "type": "string"
+            },
+            "settings": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    }
+  }
+}

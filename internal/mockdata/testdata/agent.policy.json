@@ -1,0 +1,59 @@
+{
+  "schema_version": 2,
+  "version": "mock-1.0",
+  "device_id": "mock-device-001",
+  "modules": {
+    "kidcontrol": {
+      "enabled": true,
+      "mode": "enforce",
+      "settings": {
+        "dry_run": true,
+        "app_control": {
+          "enabled": false,
+          "scan_interval_seconds": 2,
+          "blocked_apps": []
+        },
+        "window_monitoring": {
+          "enabled": false,
+          "scan_interval_seconds": 2,
+          "blocked_title_keywords": []
+        },
+        "screen_monitoring": {
+          "enabled": false,
+          "sample_interval_seconds": 3
+        },
+        "browser_monitoring": {
+          "enabled": true,
+          "default_profile": "default",
+          "profiles": {
+            "default": {
+              "policy": "block_list",
+              "allowed_urls": [],
+              "blocked_urls": [
+                "facebook.com",
+                "tiktok.com"
+              ],
+              "block_inappropriate": false,
+              "temporary_allowed_urls": [
+                {
+                  "url": "facebook.com/school",
+                  "expires_at": "2099-01-01T00:00:00Z"
+                }
+              ]
+            },
+            "study": {
+              "policy": "allow_list",
+              "allowed_urls": [
+                "google.com",
+                "wikipedia.org"
+              ],
+              "blocked_urls": [],
+              "block_inappropriate": false,
+              "temporary_allowed_urls": []
+            }
+          }
+        }
+      }
+    }
+  }
+}
